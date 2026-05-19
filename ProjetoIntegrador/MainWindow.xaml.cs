@@ -16,12 +16,15 @@ namespace ProjetoIntegrador
     /// </summary>
     public partial class MainWindow : Window
     {
+            List<Estoque> ProdutoList = new List<Estoque>();
         public MainWindow()
         {
             InitializeComponent();
+
+            ProdutoList.Add(new Estoque() { nome = "camisa", qnt = 1, codbarras = 123456789 });
+            DGestoque.ItemsSource = ProdutoList;
         }
 
-<<<<<<< HEAD
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -31,7 +34,48 @@ namespace ProjetoIntegrador
         {
 
         }
-=======
->>>>>>> bb2f19a1cdaa2fa63d8c64ab17335c7e7f3b7406
+
+        private void dgUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        public class Estoque
+        {
+            public string nome { get; set; }
+            public int qnt {  get; set; }
+            public int codbarras { get; set; }
+
+        }
+
+        private void Cad_Click(object sender, RoutedEventArgs e)
+        {
+            Estoque estoqueSelecionado = DGestoque.SelectedItem as Estoque;
+
+            if (estoqueSelecionado != null)
+            {
+                MessageBox.Show($"{estoqueSelecionado.nome}, {estoqueSelecionado.qnt}, {estoqueSelecionado.codbarras}");
+               
+            }
+            else
+            {
+                MessageBox.Show("Selecioen uma item");
+            }
+        }
+
+        private void Exc_Click(object sender, RoutedEventArgs e)
+        {
+            Estoque estoqueSelecionado = DGestoque.SelectedItem as Estoque;
+
+            if (estoqueSelecionado != null)
+            {
+                ProdutoList.Remove(estoqueSelecionado);
+                DGestoque.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Selecioen uma item");
+            }
+        }
     }
+
 }
