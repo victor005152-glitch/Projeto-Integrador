@@ -5,58 +5,245 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoIntegrador"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Canvas>
-        <Rectangle HorizontalAlignment="Center" Height="434" Stroke="Black" VerticalAlignment="Center" Width="185"/>
-        <Rectangle Height="56" Canvas.Left="185" Stroke="Black" Width="615" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Button Content="Estoque" HorizontalAlignment="Left" Margin="32,61,0,0" VerticalAlignment="Top" Height="29" Width="122"/>
-        <Button Content="Historico" HorizontalAlignment="Left" Margin="32,106,0,0" VerticalAlignment="Top" Height="29" Width="122"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="32,154,0,0" VerticalAlignment="Top" Height="29" Width="122"/>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="122" Canvas.Left="32" Canvas.Top="395"/>
-        <Label Content="WRV " HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="40" Canvas.Top="24" Canvas.Left="73" FontWeight="Bold"/>
+        Title="WRV Control"
+        Height="450"
+        Width="800">
 
+    <Canvas Background="White">
 
-        <Canvas x:Name="Login" Visibility="Collapsed" Width="800" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Background="White">
-            <Rectangle Height="234" Canvas.Left="262" Stroke="Black" Canvas.Top="100" Width="277"/>
-            <TextBox x:Name="User1" Canvas.Left="340" TextWrapping="Wrap" Canvas.Top="187" Width="120" RenderTransformOrigin="0.503,0.631" TextChanged="TextBox_TextChanged"/>
-            <TextBox x:Name="Senha1" Canvas.Left="340" TextWrapping="Wrap" Canvas.Top="217" Width="120" RenderTransformOrigin="0.503,0.631" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1"/>
-            <Label Content="Usuario" Canvas.Left="280" Canvas.Top="183"/>
-            <Label Content="Senha" Canvas.Left="280" Canvas.Top="213"/>
-            <Button Content="Acessar" Canvas.Left="416" Canvas.Top="249" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Background="#FF00BB14" Foreground="White"/>
-            <Label Content="WRV" Canvas.Left="340" Canvas.Top="114" FontWeight="Bold" FontStyle="Italic" FontSize="18" Foreground="#FF0003BB"/>
-            <Label Content="Control" Canvas.Left="391" Canvas.Top="114" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold">
-                <Label.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0.433"/>
-                        <GradientStop Color="White" Offset="0"/>
-                    </LinearGradientBrush>
-                </Label.Foreground>
-            </Label>
-            <Button Content="Recuperar " Canvas.Left="339" Canvas.Top="249" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" BorderBrush="#FF0D0050" Background="#FF2B00FF"/>
+        <!-- MENU LATERAL -->
+        <Rectangle Width="185"
+                   Height="434"
+                   Stroke="Black"/>
+
+        <!-- TOPO -->
+        <Rectangle Canvas.Left="185"
+                   Width="615"
+                   Height="56"
+                   Stroke="Black"/>
+
+        <!-- LOGO -->
+        <Label Content="WRV"
+               Canvas.Left="70"
+               Canvas.Top="24"
+               FontWeight="Bold"
+               FontSize="18"/>
+
+        <!-- BOTÕES MENU -->
+        <Button Content="Estoque"
+                Width="122"
+                Height="29"
+                Canvas.Left="32"
+                Canvas.Top="61"/>
+
+        <Button Content="Histórico"
+                Width="122"
+                Height="29"
+                Canvas.Left="32"
+                Canvas.Top="106"/>
+
+        <Button Content="Financeiro"
+                Width="122"
+                Height="29"
+                Canvas.Left="32"
+                Canvas.Top="151"/>
+
+        <Button Content="Sair"
+                Width="122"
+                Height="29"
+                Canvas.Left="32"
+                Canvas.Top="395"/>
+
+        <!-- ================================================= -->
+        <!-- LOGIN -->
+        <!-- ================================================= -->
+
+        <Canvas x:Name="Login"
+                Visibility="Collapsed"
+                Width="800"
+                Height="434"
+                Background="White">
+
+            <Rectangle Width="277"
+                       Height="234"
+                       Canvas.Left="262"
+                       Canvas.Top="100"
+                       Stroke="Black"/>
+
+            <Label Content="WRV"
+                   Canvas.Left="340"
+                   Canvas.Top="114"
+                   FontWeight="Bold"
+                   FontStyle="Italic"
+                   FontSize="18"
+                   Foreground="Blue"/>
+
+            <Label Content="Control"
+                   Canvas.Left="391"
+                   Canvas.Top="114"
+                   FontWeight="Bold"
+                   FontSize="18"/>
+
+            <Label Content="Usuário"
+                   Canvas.Left="280"
+                   Canvas.Top="183"/>
+
+            <TextBox x:Name="User1"
+                     Width="120"
+                     Canvas.Left="340"
+                     Canvas.Top="187"
+                     TextChanged="TextBox_TextChanged"/>
+
+            <Label Content="Senha"
+                   Canvas.Left="280"
+                   Canvas.Top="213"/>
+
+            <TextBox x:Name="Senha1"
+                     Width="120"
+                     Canvas.Left="340"
+                     Canvas.Top="217"
+                     TextChanged="TextBox_TextChanged_1"/>
+
+            <Button Content="Recuperar"
+                    Width="70"
+                    Canvas.Left="339"
+                    Canvas.Top="249"
+                    Background="#FF2B00FF"
+                    Foreground="White"/>
+
+            <Button Content="Acessar"
+                    Width="70"
+                    Canvas.Left="416"
+                    Canvas.Top="249"
+                    Background="#FF00BB14"
+                    Foreground="White"/>
+
         </Canvas>
 
-        <Canvas x:Name="Estoque" Visibility="Collapsed" Width="615" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Canvas.Left="185">
-            <TextBox Canvas.Left="458" TextWrapping="Wrap" Text="Pesquisar Produto" Canvas.Top="15" Width="147" TextChanged="TextBox_TextChanged" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        </Canvas>
+        <!-- ================================================= -->
+        <!-- HISTÓRICO -->
+        <!-- ================================================= -->
 
-        <Canvas x:Name="Financeiro" Visibility="Collapsed" Width="610" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Canvas.Left="190"/>
+        <Canvas x:Name="HistDeVendas"
+                Visibility="Visible"
+                Width="615"
+                Height="434"
+                Canvas.Left="185">
 
-        <Canvas x:Name="HistDeVendas" Visibility="Visible" Width="610" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Canvas.Left="190">
-            <TextBox Canvas.Left="458" TextWrapping="Wrap" Text="Pesquisar Produto" Canvas.Top="15" Width="147" TextChanged="TextBox_TextChanged" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox Width="147"
+                     Height="25"
+                     Canvas.Left="458"
+                     Canvas.Top="15"
+                     Text="Pesquisar Produto"
+                     TextChanged="TextBox_TextChanged"/>
 
-            <DataGrid x:Name="Historico1" Canvas.Left="-5" Canvas.Top="55" HorizontalAlignment="Center" VerticalAlignment="Top" Height="378" Width="615" Background="White" SelectionChanged="Historico1_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
+            <Button x:Name="Comprovante"
+                    Content="Comprovante"
+                    Canvas.Left="458"
+                    Canvas.Top="58"
+                    Click="Button_Click"/>
+
+            <DataGrid x:Name="Historico1"
+                      Width="615"
+                      Height="378"
+                      Canvas.Top="55"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      SelectionChanged="Historico1_SelectionChanged">
+
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Código" Binding="{Binding Codigo}"/>
-                    <DataGridTextColumn Header="Qtd" Binding="{Binding Qtd}"/>
-                    <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}"/>
-                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
-                    <DataGridTextColumn Header="Data"  Binding="{Binding Data, StringFormat=dd/MM/yyyy}"/>
-                    <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente}"/>
-                    <DataGridTextColumn Header="CPF" Binding="{Binding CPF}"/>
+
+                    <DataGridTextColumn Header="Código"
+                                        Binding="{Binding Codigo}"/>
+
+                    <DataGridTextColumn Header="Qtd"
+                                        Binding="{Binding Qtd}"/>
+
+                    <DataGridTextColumn Header="Descrição"
+                                        Binding="{Binding Descricao}"/>
+
+                    <DataGridTextColumn Header="Valor"
+                                        Binding="{Binding Valor}"/>
+
+                    <DataGridTextColumn Header="Data"
+                                        Binding="{Binding Data, StringFormat=dd/MM/yyyy}"/>
+
+                    <DataGridTextColumn Header="Cliente"
+                                        Binding="{Binding Cliente}"/>
+
+                    <DataGridTextColumn Header="CPF"
+                                        Binding="{Binding CPF}"/>
+
                 </DataGrid.Columns>
+
             </DataGrid>
-            <Button x:Name="Comprovante" Content="Comprovante" Canvas.Left="458" Canvas.Top="58" RenderTransformOrigin="1.893,-1.501" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
         </Canvas>
+
+        <!-- ================================================= -->
+        <!-- ESTOQUE -->
+        <!-- ================================================= -->
+
+        <Canvas x:Name="Estoque1"
+                Visibility="Collapsed"
+                Width="615"
+                Height="434"
+                Canvas.Left="185">
+
+            <TextBox Width="147"
+                     Height="25"
+                     Canvas.Left="458"
+                     Canvas.Top="15"
+                     Text="Pesquisar Produto"
+                     TextChanged="TextBox_TextChanged"/>
+
+            <Button x:Name="Cad"
+                    Content="Cadastrar"
+                    Width="70"
+                    Canvas.Left="19"
+                    Canvas.Top="13"
+                    Click="Cad_Click"/>
+
+            <Button x:Name="Exc"
+                    Content="Excluir"
+                    Width="70"
+                    Canvas.Left="97"
+                    Canvas.Top="13"
+                    Click="Exc_Click"/>
+
+            <DataGrid x:Name="DGestoque"
+                      Width="615"
+                      Height="379"
+                      Canvas.Top="55"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Nome"
+                                        Binding="{Binding nome}"/>
+
+                    <DataGridTextColumn Header="Quantidade"
+                                        Binding="{Binding qnt}"/>
+
+                    <DataGridTextColumn Header="Código de Barras"
+                                        Binding="{Binding codbarras}"/>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Canvas>
+
+        <!-- ================================================= -->
+        <!-- FINANCEIRO -->
+        <!-- ================================================= -->
+
+        <Canvas x:Name="Financeiro"
+                Visibility="Collapsed"
+                Width="615"
+                Height="434"
+                Canvas.Left="185"/>
 
     </Canvas>
 </Window>
