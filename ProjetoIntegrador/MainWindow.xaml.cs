@@ -21,7 +21,7 @@ namespace ProjetoIntegrador
             InitializeComponent();
         }
 
-<<<<<<< HEAD
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -31,7 +31,6 @@ namespace ProjetoIntegrador
         {
 
         }
-=======
->>>>>>> bb2f19a1cdaa2fa63d8c64ab17335c7e7f3b7406
+
     }
 }
